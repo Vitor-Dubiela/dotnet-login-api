@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "H6rhJf+9RDu+o+SQPw3XzXVMcL2Fn9cP2kfzhkhE6XuYCMRz8NNtoWa1c+olit9kLr1H9hjFz7fMpbr6/UD7fA==",
+  "success": true,
+  "projectFilePath": "/Users/fu/Projects/vsworkspace/dotnet-login-api/LoginApi/LoginApi/LoginApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/fu/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
+    "/Users/fu/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/fu/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/fu/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/fu/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/fu/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/fu/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
