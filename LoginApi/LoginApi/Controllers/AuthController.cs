@@ -4,30 +4,39 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LoginApi.Controllers
 {
-	[Route("api/auth")]
-	[ApiController]
-	public class AuthController : ControllerBase
-	{
-		public static List<User> _users = new List<User>();
+    [Route("api/auth")]
+    [ApiController]
+    public class AuthController : ControllerBase
+    {
+        public static User _user = new User();
 
-		[HttpPost("register-user")]
-		public async Task<ActionResult<User>> RegisterUser([FromBody] UserDto userDto)
-		{
-			if (!ValidateUsername(userDto.Username))
-				return BadRequest("The User name was not valid.");
+        [HttpPost("register-user")]
+        public ActionResult<User> RegisterUser([FromBody] UserDto userDto)
+        {
+            if (!ValidateUsername(userDto.Username))
+                return BadRequest("The User name was not valid.");
 
-			return Ok();
-		}
+            _user.Username = userDto.Username;
+            _user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
 
-		private static bool ValidateUsername(string username)
-		{
-			foreach (var user in _users)
-			{
-				if (user.Username.Equals(username))
-					return false;
-			}
-			return true;
-		}
-	}
+            return Ok(_user);
+        }
+
+        private static bool ValidateUsername(string username)
+        {
+            if (_user.Username.Equals(username))
+                return false;
+            return true;
+        }
+
+        [HttpPost("login")]
+        public ActionResult<User> Login([FromBody] UserDto userDto)
+        {
+            if (!BCrypt.Net.BCrypt.Verify(userDto.Password, _user.PasswordHash))
+                return BadRequest("The password is invalid.");
+
+            return Ok("You are connected.");
+        }
+    }
 }
 
